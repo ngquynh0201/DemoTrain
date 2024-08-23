@@ -30,7 +30,7 @@ public class BlobalExceptionHandler {
     }
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    ResponseEntity<String> handlingValidation(MethodArgumentNotValidException exception) {
+    ResponseEntity<ApiRespose> handlingValidation(MethodArgumentNotValidException exception) {
         String enumKey = exception.getFieldError().getDefaultMessage();
 
         ErroCode erroCode = ErroCode.INVALID_KEY;
